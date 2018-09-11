@@ -57,13 +57,31 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _hello_world = __webpack_require__(/*! ./hello_world */ 175);
+	var _header = __webpack_require__(/*! ./header/header */ 179);
 	
-	var _hello_world2 = _interopRequireDefault(_hello_world);
+	var _header2 = _interopRequireDefault(_header);
+	
+	var _right = __webpack_require__(/*! ./rightCol/right */ 180);
+	
+	var _right2 = _interopRequireDefault(_right);
+	
+	var _left = __webpack_require__(/*! ./leftCol/left */ 181);
+	
+	var _left2 = _interopRequireDefault(_left);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_reactDom2.default.render(_react2.default.createElement(_hello_world2.default, null), document.querySelector('main'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_header2.default, null),
+	    _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_left2.default, null),
+	        _react2.default.createElement(_right2.default, null)
+	    )
+	), document.querySelector('main'));
 
 /***/ },
 /* 1 */
@@ -21994,10 +22012,14 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 175 */
-/*!*****************************!*\
-  !*** ./src/hello_world.jsx ***!
-  \*****************************/
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */
+/*!*******************************!*\
+  !*** ./src/header/header.jsx ***!
+  \*******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22012,19 +22034,247 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var HelloWorld = _react2.default.createClass({
-	  displayName: 'HelloWorld',
+	var header = {
+	  color: 'blue',
+	  padding: '30px',
+	  fontSize: '40px',
+	  textAlign: 'center',
+	  background: 'white'
+	};
+	
+	var Header = _react2.default.createClass({
+	  displayName: 'Header',
 	
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h1',
-	      null,
-	      'Hello World'
+	      'div',
+	      { style: header },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Blog Name'
+	      )
 	    );
 	  }
 	});
 	
-	exports.default = HelloWorld;
+	exports.default = Header;
+
+/***/ },
+/* 180 */
+/*!********************************!*\
+  !*** ./src/rightCol/right.jsx ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var rightcolumn = {
+	  float: 'left',
+	  width: '25%',
+	  paddingLeft: '20px'
+	};
+	
+	var card = {
+	  backgroundColor: 'white',
+	  padding: '20px',
+	  marginTop: '20px'
+	};
+	
+	var fakeimg = {
+	  backgroundColor: '#aaa',
+	  width: '100%',
+	  padding: '20px'
+	};
+	
+	var RightCol = _react2.default.createClass({
+	  displayName: 'RightCol',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { style: rightcolumn },
+	      _react2.default.createElement(
+	        'div',
+	        { style: card },
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'About Me'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { style: fakeimg },
+	          'Image'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Some text about me in culpa qui officia deserunt mollit anim..'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { style: card },
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Popular Post'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { style: fakeimg },
+	          'Image'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'div',
+	          { style: fakeimg },
+	          'Image'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'div',
+	          { style: fakeimg },
+	          'Image'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { style: card },
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Follow Me'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Some text..'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = RightCol;
+
+/***/ },
+/* 181 */
+/*!******************************!*\
+  !*** ./src/leftCol/left.jsx ***!
+  \******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var leftcolumn = {
+	  float: 'left',
+	  width: '75%'
+	};
+	
+	var card = {
+	  backgroundColor: 'white',
+	  padding: '20px',
+	  marginTop: '20px'
+	};
+	
+	var fakeimg = {
+	  backgroundColor: '#aaa',
+	  width: '100%',
+	  padding: '20px'
+	};
+	
+	var LeftCol = _react2.default.createClass({
+	  displayName: 'LeftCol',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { style: leftcolumn },
+	      _react2.default.createElement(
+	        'div',
+	        { style: card },
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'TITLE HEADING'
+	        ),
+	        _react2.default.createElement(
+	          'h5',
+	          null,
+	          'Title description, Dec 7, 2017'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { style: fakeimg },
+	          'Image'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Some text..'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { style: card },
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'TITLE HEADING'
+	        ),
+	        _react2.default.createElement(
+	          'h5',
+	          null,
+	          'Title description, Sep 2, 2017'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { style: fakeimg },
+	          'Image'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Some text..'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = LeftCol;
 
 /***/ }
 /******/ ]);

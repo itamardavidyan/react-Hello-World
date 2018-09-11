@@ -1,5 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './hello_world';
+import Header from './header/header';
+import RightCol from './rightCol/right';
+import LeftCol from './leftCol/left';
 
-ReactDOM.render(<HelloWorld />, document.querySelector('main'));
+ReactDOM.render(
+    <div>
+        <Header />
+        <div>
+            <LeftCol />
+            <RightCol />
+        </div>
+    </div>,
+    document.querySelector('main')
+);
